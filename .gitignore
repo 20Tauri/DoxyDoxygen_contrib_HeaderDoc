@@ -1,0 +1,7 @@
+*.pyc
+*.ppk
+__pycache__/
+Private/
+private/
+DOWNLOAD.md
+git_*
