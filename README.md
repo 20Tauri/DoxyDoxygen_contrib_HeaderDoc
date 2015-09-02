@@ -5,9 +5,11 @@ This plugin adds HeaderDoc support to [DoxyDoxygen](https://github.com/20Tauri/D
 It can be used as a template to add you own documenting style to DoxyDoxygen.
 
 To use them. First:
+
    - install DoxyDoxygen.
 
 Then:
+
    - Click the ```Preferences > Browse Packages...``` menu to open package directory
    - Create a directory named ```DoxyDoxygen_contrib_<your_module_name>```
    - Copy into it the content of ```DoxyDoxygen_contrib_HeaderDoc```
