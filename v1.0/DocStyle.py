@@ -1,9 +1,10 @@
 # -*- encoding: iso-latin-1 -*-
-#============================================================================
+#=============================================================================
+
 __license__ = "https://raw.githubusercontent.com/20Tauri/DoxyDoxygen_contrib_HeaderDoc/master/LICENSE.md"
 
 
-#----------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
 ## @brief      HeaderDoc commands description
 ##
 ## @see        https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/HeaderDoc/tags/tags.html#//apple_ref/doc/uid/TP40001215-CH346-CHDJFEGF
