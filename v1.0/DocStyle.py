@@ -1,4 +1,4 @@
-# -*- encoding: iso-latin-1 -*-
+# -*- coding: iso-latin-1 -*-
 #=============================================================================
 
 __license__ = "https://raw.githubusercontent.com/20Tauri/DoxyDoxygen_contrib_HeaderDoc/master/LICENSE.md"
@@ -42,22 +42,31 @@ class DocStyle(DocStyleBase):
     def __init__(self):
         DocStyleBase.__init__(self, COMMANDS_LIST)
 
-    def generate_uncommented_text(self, definition):
-        uncommented_text = ""
+    def definition_to_commands_list(self, definition):
+        commands_list = []
 
         if definition["kind"] in ["var"]:
-            uncommented_text += self.command("@var", [])
+            commands_list += self.command("@var")
         elif definition["kind"] in [ "constant" ]:
-            uncommented_text += self.command("@const", [])
+            commands_list += self.command("@const")
         else:
             for (_, _, name, _) in definition["params"]:
-                uncommented_text += self.command("@param", [ name ])
+                commands_list += self.command("@param", [ name ])
 
             definition_return = definition["return"]
             if definition_return and definition_return != "void":
-                uncommented_text += self.command("@return", [])
+                commands_list += self.command("@return")
 
             for type_name in definition["throws"]:
-                uncommented_text += self.command("@throws", [ type_name ])
+                commands_list += self.command("@throws", [ type_name ])
 
-        return uncommented_text
+        return commands_list
+
+    def generable_commands_names(self):
+        return [
+            "@var",
+            "@const",
+            "@param",
+            "@return",
+            "@throws",
+        ]
